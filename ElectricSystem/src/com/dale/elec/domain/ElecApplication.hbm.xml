@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.dale.elec.domain.ElecApplication" table="Elec_Application">
+		<id name="applicationID" type="long">
+			<column name="applicationID"/>
+			<generator class="increment"></generator>
+		</id>
+		<property name="applicationTemplateID" type="long">
+			<column name="applicationTemplateID"/>
+		</property>
+		<property name="title" type="string">
+			<column name="title"/>
+		</property>
+		<property name="path" type="string">
+			<column name="path"/>
+		</property>
+		<property name="applicationUserID" type="string">
+			<column name="applicationUserID"/>
+		</property>
+		<property name="applicationLogonName" type="string">
+			<column name="applicationLogonName"/>
+		</property>
+		<property name="applicationUserName" type="string">
+			<column name="applicationUserName"/>
+		</property>
+		<property name="applyTime" type="timestamp">
+			<column name="applyTime"/>
+		</property>
+		<property name="status" type="string">
+			<column name="status"/>
+		</property>
+	</class>
+</hibernate-mapping>

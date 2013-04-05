@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- 这里刚开发时，用myslq连接测试当数据源 -->
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.connection.autocommit">true</property>
+		
+		<!-- 在这里声明加载hbm，beans，java测试类使用时就不用在加载了 -->
+		<mapping resource="com/dale/elec/domain/ElecText.hbm.xml"/>
+		<mapping resource="com/dale/elec/domain/ElecCommonMsg.hbm.xml"/>
+		<mapping resource="com/dale/elec/domain/ElecSystemDDL.hbm.xml"/>
+		<mapping resource="com/dale/elec/domain/ElecUser.hbm.xml"/>
+		<mapping resource="com/dale/elec/domain/ElecUserRole.hbm.xml"/>
+		<mapping resource="com/dale/elec/domain/ElecRolePopedom.hbm.xml"/>
+		<mapping resource="com/dale/elec/domain/ElecApplication.hbm.xml"/>
+		<mapping resource="com/dale/elec/domain/ElecApproveInfo.hbm.xml"/>
+		
+		<!-- 加入JBPM的相关映射 -->
+		<mapping resource="jbpm.repository.hbm.xml" />
+        <mapping resource="jbpm.execution.hbm.xml" />
+        <mapping resource="jbpm.history.hbm.xml" />
+        <mapping resource="jbpm.task.hbm.xml" />
+        <mapping resource="jbpm.identity.hbm.xml" />
+        
+		<!-- 加载jbpm模版 -->
+		<mapping resource="com/dale/elec/domain/ElecApplicationTemplate.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>
